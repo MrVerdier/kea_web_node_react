@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
-    "prod": "ENVIRONMENT=PROD node app.js"
+    "prod": "ENVIRONMENT=PROD forever app.js"
   },
   "keywords": [],
   "author": "",
