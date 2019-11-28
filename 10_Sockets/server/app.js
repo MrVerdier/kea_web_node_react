@@ -11,9 +11,9 @@ app.get("/", (req, res) => {
 const environment = process.env.ENVIRONMENT
 const PORT = environment === "PROD" ? 80 : 8080
 
-server.listen(8080, (error) =>{
+server.listen(PORT, (error) =>{
     if (error) {
         console.log(error)
     }
-    console.log("Server is running on port", 8080)
+    console.log("Server is running on port", PORT)
 })
