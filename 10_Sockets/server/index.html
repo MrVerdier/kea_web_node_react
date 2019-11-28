@@ -5,8 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
 </head>
 <body>
-    <h1>Sockets</h1>
+    <h1>What's on your mind</h1>
+    <input id="thoughts" placeholder="What's up?">
+    <button id="btn-send">Submit</button>
+    <div id="show-message"></div>
+    <script>   
+        const socket = io.connect("localhost:80")
+
+        $("#btn-send").click(() => {
+            const messageText = $("#thoughts").val()
+            socket.emit("I'm thinking about this", { message: messageText })
+        })
+        
+        socket.on("Someone said", data => {
+            const message = data.message
+            $("#show-message").prepend("<div>" + message + "</div>")
+        })
+
+    </script>
 </body>
 </html>
