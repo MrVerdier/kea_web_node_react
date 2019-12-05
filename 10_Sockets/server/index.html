@@ -2,29 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Basic Chat</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js" integrity="sha256-Dul4c09cdrWKXVtallPxF558lwxMwCC8dXJdZ0PVW54=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>What's on your mind</h1>
-    <input id="thoughts" placeholder="What's up?">
-    <button id="btn-send">Submit</button>
+    <h1>What's on your mind?</h1>
+    <input id="thoughts" placeholder="whaccha thinking?"/>
+    <button id="btn-send">Click</button>
     <div id="show-message"></div>
-    <script>   
-        const socket = io.connect("localhost:80")
+    <script>
+        const socket = io.connect("");
 
         $("#btn-send").click(() => {
-            const messageText = $("#thoughts").val()
-            socket.emit("I'm thinking about this", { message: messageText })
-        })
-        
+            const message = $("#thoughts").val();
+            $("#thoughts").val("");
+            socket.emit("I'm thinking about this", { message });
+        });
+
         socket.on("Someone said", data => {
-            const message = data.message
-            $("#show-message").prepend("<div>" + message + "</div>")
-        })
+            $("#show-message").prepend("<div>" + data.message + "</div>");
+        });
 
     </script>
 </body>
