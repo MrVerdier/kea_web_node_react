@@ -1,0 +1,19 @@
+Assume that I am a company that will hire the 4 fastest people to solve this task.
+Your assignment is to create a Rest API in Node that can send emails using your own email serving as a SMTP server. 
+
+Requirement I want you to use:
+https://www.npmjs.com/package/nodemailer
+
+Hide your passwords for when you show me or others the solution.
+password.js: module.myPassword = "password"; 
+app.js: var password = require("./password");
+        console.log(password.myPassword);
+
+For this assignment you are allowed to authenticate using a plain-text password instead of OAuth2.
+If you are using gmail this requires you to temporarily allow less secure apps to send mails on your behalf. 
+
+https://myaccount.google.com/lesssecureapps
+
+If you are using a different mail service and the instructions don't work out-of-the-box then google what to do specific to that mail service. 
+
+Remember to disable this after the lesson!

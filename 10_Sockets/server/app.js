@@ -4,7 +4,10 @@ const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 
-const escape = require("escape-html");
+const escape = require("escape-html")
+const helmet = require('helmet')
+
+app.use(helmet)
 
 io.on("connection", socket => {
     // console.log("Socket joined", socket.id);

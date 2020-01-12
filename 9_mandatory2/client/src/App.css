@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  height: 75px;
+}
+
+.main-nav div {
+  margin-right: 20px;
+}
+
+.main-nav div a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px
+}
+
+.main-nav div a:hover {
+  font-weight: bold;
+}
+
+#sendEmail, #login {
+  width: 50vw;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+input[type=text], input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  background-color: rgb(29, 41, 181);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(29, 41, 181);
+}
+
+.email-list-info {
+  background: rgb(213, 213, 213);
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 6px rgba(0,0,0, 0.3)
+}
+
+.from, .to, .subject {
+  font-weight: bold;
+}
+
+.message {
+  background: #fff;
+  margin-top: 10px;
+  padding: 10px;
+}

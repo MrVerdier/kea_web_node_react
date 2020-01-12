@@ -1,0 +1,20 @@
+{
+  "name": "people_search",
+  "version": "1.0.0",
+  "description": "People search for many people",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "people",
+    "search"
+  ],
+  "author": "Anders Verdier",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "fs": "0.0.1-security"
+  }
+}

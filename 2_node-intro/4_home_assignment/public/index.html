@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POST</title>
+</head>
+<body>
+    
+    <form id="frmAboutMe">
+        <input type="text" name="firstName" placeholder="First Name">
+        <input type="text" name="lastName" placeholder="Last Name">
+        <button>Submit</button>
+    </form>
+    <div id="result"></div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+        $("#frmAboutMe").submit(() => {
+            console.log("clicked")
+            $.post("/aboutme", $("#frmAboutMe").serialize(), (data) => {
+            console.log(data)
+            $('#result').append("<div>" + data + "</div>")
+        })
+        return false
+
+        })
+        
+        
+        // create a form that posts to a new request handler on the server
+        // this request handler should be called POST /aboutme
+        // the /aboutme should receive a body with a new firstName and lastName
+        
+        // bonus: once posted to /aboutme it should change the now global aboutme variable 
+        // and calling GET /aboutme should allow for a different result
+    </script>
+</body>
+</html>
+
+
+
+
